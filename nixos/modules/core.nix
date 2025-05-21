@@ -8,4 +8,6 @@
       ./drivers/drivers.nix  # Drivers.
       ./gaming/gaming.nix    # Gaming.
     ];
+
+  services.flatpak.enable = true;
 }

@@ -1,4 +1,5 @@
 { pkgs }: with pkgs; [
-    bluedevil    # KDE Bluetooth integration
+    # bluedevil    # KDE Bluetooth integration
     bluez        # Bluetooth protocol stack
+    gnome-tweaks
 ]

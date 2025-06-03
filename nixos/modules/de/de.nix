@@ -1,6 +1,11 @@
 {
   imports =
     [
-      ./gnome.nix
+      # Desktop Environment
+      # ./gnome.nix
+      ./kde.nix
+
+      # DE addons
+      ./hyprland.nix
     ];
 }

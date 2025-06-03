@@ -2,10 +2,11 @@
 
 {
   fonts.packages = with pkgs; [
-    nerdfonts
-    # or specific fonts like:
-    (nerdfonts.override { fonts = [ "FiraCode" ]; })
+    nerd-fonts.fira-code
   ];
+
+   virtualisation.docker.enable = true;
+   users.users.mitch.extraGroups = [ "docker" ];   
 
 #  programs.alacritty = {
 #    enable = true;

@@ -3,12 +3,12 @@
 with lib;
 
 let
-  cfg = config.programs.mod-alacritty;
+  cfg = config.programs._alacritty;
 in {
-  options.programs.mod-alacritty = {
+  options.programs._alacritty = {
     enable = mkOption {
       type = types.bool;
-      default = true;
+      default = false;
       description = "Enable custom Alacritty configuration";
     };
   };

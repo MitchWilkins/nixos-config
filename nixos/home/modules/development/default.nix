@@ -5,6 +5,11 @@ with lib;
 let
   cfg = config.programs._development;
 in {
+  imports = [
+    ./alacritty.nix
+    ./git.nix
+  ];
+
   options.programs._development = {
     enable = mkOption {
       type = types.bool;
@@ -14,10 +19,8 @@ in {
   };
 
   config = mkIf cfg.enable {
-    imports = [
-      ./alacritty.nix
-      ./git.nix
-    ];
+    programs._alacritty.enable = true;
+    programs._git.enable = true;
   };
 
 

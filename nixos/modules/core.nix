@@ -4,7 +4,7 @@
   imports = 
     [
       ./de/de.nix            # Development Environment.
-      ./develop/develop.nix  # Development.
+      ./develop              # Development.
       ./drivers/drivers.nix  # Drivers.
       ./gaming/gaming.nix    # Gaming.
     ];
@@ -25,4 +25,6 @@
     AllowSuspendThenHibernate=no
   '';
 
+  nixpkgs.config.allowUnfree = true;
+  custom._develop.enable = true;
 }

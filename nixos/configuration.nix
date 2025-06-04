@@ -79,7 +79,7 @@
   users.users.mitch = {
     isNormalUser = true;
     description = "mitch";
-    extraGroups = [ "networkmanager" "wheel" "docker" "disk" ];
+    extraGroups = [ "networkmanager" "wheel" "disk" ];
     packages = import ./modules/packages.nix { inherit pkgs; lib = pkgs.lib; };
   };
 

@@ -1,35 +1,47 @@
 { config, lib, pkgs, ... }:
 
+with lib;
+
 let
-  home-manager = builtins.fetchTarball https://github.com/nix-community/home-manager/archive/release-25.05.tar.gz;
-in
-{
- imports =
-    [
-      (import "${home-manager}/nixos")
-    ];
-  home-manager.packages = with pkgs; [
-    (nerdfonts.override { fonts = [ "FireCode Nerd Font" ]; })
- ];
- 
-  programs.alacritty = {
-    enable = true;
+  cfg = config.programs.mod-alacritty;
+in {
+  options.programs.mod-alacritty = {
+    enable = mkOption {
+      type = types.bool;
+      default = true;
+      description = "Enable custom Alacritty configuration";
+    };
+  };
 
-    settings = {
-      window = {
-        opacity = 0.9;
-        padding = {
-          x = 10;
-          y = 10;
-        };
-      };
+  config = mkIf cfg.enable {
+    programs.alacritty = {
+      enable = true;
 
-      font = {
-        normal = {
-          family = "FiraCode Nerd Font";
-          style = "Regular";
+      settings = {
+        window = {
+          opacity = 0.6;
+          padding = {
+            x = 10;
+            y = 10;
+          };
         };
-        size = 11.5;
+
+        font = {
+          normal = {
+            family = "FiraCode Nerd Font";
+            style = "Regular";
+          };
+          size = 11.5;
+        };
+
+        mouse = {
+          bindings = [
+            {
+              mouse = "Right";
+              action = "Paste";
+            }
+          ];
+        };
       };
     };
   };

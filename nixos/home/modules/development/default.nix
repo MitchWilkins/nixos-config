@@ -21,6 +21,7 @@ in {
   config = mkIf cfg.enable {
     programs._alacritty.enable = true;
     programs._git.enable = true;
+    programs.vscode.enable = true;
   };
 
 

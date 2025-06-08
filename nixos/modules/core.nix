@@ -25,6 +25,6 @@
     AllowSuspendThenHibernate=no
   '';
 
-  nixpkgs.config.allowUnfree = true;
   custom._develop.enable = true;
+  programs.gamemode.enable = true; # enable for gaming
 }

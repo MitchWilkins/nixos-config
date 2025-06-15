@@ -14,9 +14,14 @@ in {
   };
 
   config = mkIf cfg.enable {
-    programs.git.enable = true;
-    programs.git.userName = "Mitch Wilkins";
-    programs.git.userEmail = "mitch.wilkins@me.com";
+    programs.git = {
+      enable = true;
+      userName = "Mitch Wilkins";
+      userEmail = "mitch.wilkins@me.com";
+      extraConfig = {
+        init.defaultBranch = "main";
+      };
+    };
   };
 
 }

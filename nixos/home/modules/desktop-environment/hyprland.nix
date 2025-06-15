@@ -4,6 +4,7 @@ with lib;
 
 let
   cfg = config.programs._hyprland;
+  wp = "${config.home.homeDirectory}/Pictures/Wallpapers/the_elder_scrolls_v_skyrim_by_artfall_d4w0bgn.jpg";
 in {
   options.programs._hyprland = {
     enable = mkOption {
@@ -14,23 +15,28 @@ in {
   };
 
   config = mkIf cfg.enable {
+    xdg.configFile."hypr/hyprland.conf".source  = ./config/hyprland.conf;    
+    xdg.configFile."waybar/config.jsonc".source = ./config/config.jsonc;
+    xdg.configFile."waybar/style.css".source    = ./config/style.css;
+
+
     wayland.windowManager.hyprland.enable = true; 
     programs.waybar.enable                = true;
     
     home.sessionVariables.NIXOS_OZONE_WL = "1";
 
-    xdg.configFile."hypr/hyprland.conf".source  = ./config/hyprland.conf;    
-    xdg.configFile."waybar/config.jsonc".source = ./config/config.jsonc;
-    xdg.configFile."waybar/style.css".source    = ./config/style.css;
+    home.packages = with pkgs; [
+      hyprpaper
+    ];
 
     services.hyprpaper = {
       enable = true;
+
       settings = {
-        ipc = "off";
-        preload = [ "~/Pictures/Wallpapers/the_elder_scrolls_v_skyrim_by_artfall_d4w0bgn.jpg" ];
+        preload = [ wp ];
         wallpaper = [
-          "DP-5,~/Pictures/Wallpapers/the_elder_scrolls_v_skyrim_by_artfall_d4w0bgn.jpg"
-          "DP-4,~/Pictures/Wallpapers/the_elder_scrolls_v_skyrim_by_artfall_d4w0bgn.jpg"
+          "DP-5,${wp}"
+          "DP-4,${wp}"
         ];
       };
     };

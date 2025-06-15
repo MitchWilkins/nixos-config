@@ -9,15 +9,15 @@
 
     # Waybar for Hyprland
     # waybar
-    (waybar.overrideAttrs (oldAttrs : {
-      mesonFlags = oldAttrs.mesonFlags ++ [ "-Dexperimental=true" ];
-    }))
+    # (waybar.overrideAttrs (oldAttrs : {
+    #   mesonFlags = oldAttrs.mesonFlags ++ [ "-Dexperimental=true" ];
+    # }))
    
     # Rofi for Hyprland
     rofi-wayland
 
     # Wallpaper for Hyprland
-    hyprpaper
+    # hyprpaper
 
     # Network manager for Hyprland
     networkmanagerapplet

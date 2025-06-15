@@ -19,10 +19,17 @@ in {
 
       settings = {
         window = {
-          opacity = 0.6;
+          opacity = 1.0;
           padding = {
-            x = 10;
-            y = 10;
+            x = 5;
+            y = 5;
+          };
+        };
+
+        colors = {
+          primary = {
+            background = "#262626";
+            foreground = "#f0f2fd";
           };
         };
 

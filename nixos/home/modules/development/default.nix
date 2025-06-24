@@ -8,7 +8,7 @@ in {
   imports = [
     ./alacritty.nix
     ./git.nix
-    ./nvim.nix
+    ./nvim
   ];
 
   options.programs._development = {

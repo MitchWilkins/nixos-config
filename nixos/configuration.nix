@@ -9,8 +9,6 @@
     [ # Include the results of the hardware scan.
       ./hardware-configuration.nix
       ./modules/core.nix
-#      <home-manager/nixos>      
-#      ./home/modules/development/alacritty.nix
     ];
 
   nix.settings.experimental-features = [ "nix-command" "flakes" ];

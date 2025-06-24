@@ -7,26 +7,20 @@
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
   };
 
-  outputs = { self, nixpkgs, home-manager }: {
+  outputs = { self, nixpkgs, home-manager }@inputs: {
     nixosConfigurations = {
       nixos = nixpkgs.lib.nixosSystem {
         system = "x86_64-linux";
-       modules = [
-         ./configuration.nix
-         home-manager.nixosModules.home-manager
-         {
-           home-manager.useGlobalPkgs = true;
-           home-manager.useUserPackages = true;
-           home-manager.backupFileExtension = "backup"; # Set backup file extension
-           home-manager.users.mitch = import ./home/home.nix {
-             pkgs = import nixpkgs {
-               system = "x86_64-linux";
-             };
-             lib = nixpkgs.lib;
-             config = {};
-           };
-         }
-       ];
+         modules = [
+           ./configuration.nix
+            home-manager.nixosModules.home-manager
+            {
+              home-manager.useGlobalPkgs = true;
+              home-manager.useUserPackages = true;
+              home-manager.backupFileExtension = "bak"; # Set backup file extension
+              home-manager.users.mitch = import ./home/home.nix;
+            }
+         ];
       };
     };
   };

@@ -7,15 +7,14 @@ let
 in {
   options.programs._nvim = {
     enable = mkOption {
-      type = types.bool;
       default = false;
       description = "Enable custom Lazy/NeoVim configuration";
     };
   };
 
   config = mkIf cfg.enable {
-
-    home.packages = with pkgs; [
+   
+    home.packages = with pkgs; [    
       neovim
       curl
       tmux
@@ -30,6 +29,13 @@ in {
       lua-language-server
     ];
     
+    programs.tmux = {
+      enable = true;
+      extraConfig = ''
+        set -g default-terminal "tmux-256color"
+        set -ga terminal-overrides ",xterm-256color:RGB"
+      '';
+    };
     # programs.neovim = {
     #   enable = true;
     #   defaultEditor = true;

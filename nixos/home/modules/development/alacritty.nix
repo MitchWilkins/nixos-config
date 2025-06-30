@@ -23,7 +23,8 @@ in {
         };
 
         window = {
-          opacity = 0.85;
+          opacity = 0.65;
+          blur = true;
           padding = {
             x = 5;
             y = 5;
@@ -32,8 +33,28 @@ in {
 
         colors = {
           primary = {
-            background = "#262626";
-            foreground = "#f0f2fd";
+            background = "#1a1b26";
+            foreground = "#c0caf5";
+          };
+          normal = {
+            black   = "#15161E";
+            red     = "#f7768e";
+            green   = "#9ece6a";
+            yellow  = "#e0af68";
+            blue    = "#7aa2f7";
+            magenta = "#bb9af7";
+            cyan    = "#7dcfff";
+            white   = "#a9b1d6";
+          };
+          bright = {
+            black   = "#414868";
+            red     = "#f7768e";
+            green   = "#9ece6a";
+            yellow  = "#e0af68";
+            blue    = "#7aa2f7";
+            magenta = "#bb9af7";
+            cyan    = "#7dcfff";
+            white   = "#c0caf5";
           };
         };
 

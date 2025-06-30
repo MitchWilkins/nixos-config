@@ -15,6 +15,8 @@
   programs._development.enable         = true;
   programs._gaming.enable              = true;
 
+  programs.joplin-desktop.enable = true;
+  programs.htop.enable = true;
   home.stateVersion = "23.05";
 }
     

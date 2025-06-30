@@ -5,7 +5,7 @@
 }
 
 window#waybar {
-    background-color: rgba(43, 48, 59, 0.5);
+    background-color: rgba(26, 27, 38, 0.5);
     border-bottom: 1px solid rgba(100, 114, 125, 0.5);
     color: #ffffff;
     transition-property: background-color;
@@ -50,17 +50,37 @@ button:hover {
 
 /* you can set a style on hover for any module like this */
 #pulseaudio:hover {
-    color: #ffcb29;
+    color: #ffffff;
+}
+
+#memory:hover {
+    color: #ffffff;
+}
+
+#network:hover {
+    color: #ffffff;
+}
+
+#custom-cpu:hover {
+    color: #ffffff;
+}
+
+#custom-gpu:hover {
+    color: #ffffff;
+}
+
+#custom-power:hover {
+    color: #ffffff;
 }
 
 #workspaces button {
     padding: 0 5px;
     background-color: transparent;
-    color: #ffffff;
+    color: #bb9aff;
 }
 
 #workspaces button:hover {
-    color: rgba(0, 0, 0, 0.2);
+    color: #ffffff;
 }
 
 #workspaces button.focused {
@@ -80,6 +100,9 @@ button:hover {
 #clock,
 #battery,
 #cpu,
+#custom-cpu,
+#custom-gpu,
+#custom-power,
 #memory,
 #disk,
 #temperature,
@@ -94,7 +117,7 @@ button:hover {
 #scratchpad,
 #power-profiles-daemon,
 #mpd {
-    padding: 0 10px;
+    padding: 0 5px;
     color: #ffffff;
 }
 
@@ -184,13 +207,19 @@ label:focus {
     background-color: #000000;
 }
 
-#cpu {
+#custom-cpu {
     /*background-color: #2ecc71;*/
-    color: #FFFFFF;
+    color: #9ece6a;
+}
+
+#custom-gpu {
+    /*background-color: #2ecc71;*/
+    color: #f7768e;
 }
 
 #memory {
-    /*background-color: #9b59b6;*/
+  color: #ff9e64;
+  /*background-color: #9b59b6*/
 }
 
 #disk {
@@ -202,16 +231,17 @@ label:focus {
 }
 
 #network {
-    /*background-color: #2980b9;*/
+    color: #7dcfff;
+    padding: 0 6px;
 }
 
 #network.disconnected {
-    background-color: #f53c3c;
+    color: #f53c3c;
 }
 
 #pulseaudio {
     /*background-color: #f1c40f;*/
-    color: #FFFFFF;
+    color: #e0af68;
 }
 
 #pulseaudio.muted {

@@ -4,7 +4,7 @@ with lib;
 
 let
   cfg = config.programs._hyprland;
-  wp = "${config.home.homeDirectory}/Pictures/Wallpapers/the_elder_scrolls_v_skyrim_by_artfall_d4w0bgn.jpg";
+  wp = "${config.home.homeDirectory}/Pictures/Wallpapers/andre-benz-cXU6tNxhub0-unsplash.jpg";
 in {
   options.programs._hyprland = {
     enable = mkOption {
@@ -27,6 +27,7 @@ in {
 
     home.packages = with pkgs; [
       hyprpaper
+      hyprshot
     ];
 
     services.hyprpaper = {
@@ -38,6 +39,15 @@ in {
           "DP-5,${wp}"
           "DP-4,${wp}"
         ];
+      };
+    };
+    services.mako = {
+      enable = true;
+
+      settings = {
+        anchor = "top-right";
+        border-radius = 10;
+        default-timeout = 6000;
       };
     };
   };

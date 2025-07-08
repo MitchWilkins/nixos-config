@@ -3,7 +3,7 @@
     [
       # Desktop Environment
       # ./gnome.nix
-      ./kde.nix
+      # ./kde.nix
 
       # DE addons
       ./hyprland.nix

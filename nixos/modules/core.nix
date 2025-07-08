@@ -15,15 +15,15 @@
   boot.kernelParams = [ "nvidia-drm.modeset=1" ];
 
   # Cancel suspend
-  systemd.sleep.extraConfig = ''
-    HandleSuspendKey=ignore
-    HandleHibernateKey=ignore
-
-    AllowSuspend=no
-    AllowHibernation=no
-    AllowHybridSleep=no
-    AllowSuspendThenHibernate=no
-  '';
+  # systemd.sleep.extraConfig = ''
+  #   HandleSuspendKey=ignore
+  #   HandleHibernateKey=ignore
+  #
+  #   AllowSuspend=no
+  #   AllowHibernation=no
+  #   AllowHybridSleep=no
+  #   AllowSuspendThenHibernate=no
+  # '';
 
   custom._develop.enable = true;
   programs.gamemode.enable = true; # enable for gaming

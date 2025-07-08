@@ -26,8 +26,13 @@ in {
     home.sessionVariables.NIXOS_OZONE_WL = "1";
 
     home.packages = with pkgs; [
+      hyprcursor
+      hypridle
+      hyprlock
       hyprpaper
       hyprshot
+      imv
+      yazi
     ];
 
     services.hyprpaper = {

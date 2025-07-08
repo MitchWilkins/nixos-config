@@ -17,6 +17,7 @@ in {
   config = mkIf cfg.enable {
     home.packages = with pkgs; [ 
       discord 
+      lutris
       mangohud
       protonplus
     ];

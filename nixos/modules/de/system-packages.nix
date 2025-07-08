@@ -1,11 +1,10 @@
 { pkgs }: with pkgs; [
-    kdePackages.bluedevil      # KDE Bluetooth integration
-    bluez                      # Bluetooth protocol stack
+    # kdePackages.bluedevil      # KDE Bluetooth integration
+    # bluez                      # Bluetooth protocol stack
     # gnome-tweaks
 
     # Hyprland
     libnotify
-    mako      # Notification bar
 
     # Waybar for Hyprland
     # waybar
@@ -23,5 +22,4 @@
     networkmanagerapplet
 
     #File Manager
-    nemo
 ]

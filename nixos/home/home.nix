@@ -17,6 +17,11 @@
 
   programs.joplin-desktop.enable = true;
   programs.htop.enable = true;
+
+  home.packages = with pkgs; [
+    qalculate-gtk
+  ];
+
   home.stateVersion = "23.05";
 }
     

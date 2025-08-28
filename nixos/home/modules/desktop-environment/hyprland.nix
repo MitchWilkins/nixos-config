@@ -41,8 +41,8 @@ in {
       settings = {
         preload = [ wp ];
         wallpaper = [
-          "DP-5,${wp}"
-          "DP-4,${wp}"
+          "DP-2,${wp}"
+          "DP-3,${wp}"
         ];
       };
     };

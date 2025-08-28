@@ -253,5 +253,8 @@
     "format": " \uF313 ",
     "tooltip": false,
     "on-click": "/run/current-system/sw/bin/rofi -show drun"
+  },
+  "hyprland/workspaces": {
+    "separate-outputs": true
   }
 }

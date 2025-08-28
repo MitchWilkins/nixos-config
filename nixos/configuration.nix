@@ -17,6 +17,10 @@
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
 
+  # amd
+  # boot.initrd.kernelModules = ["amdgpu"];
+  # boot.kernelPackages = pkgs.linuxPackages_6_14;
+
   networking.hostName = "nixos"; # Define your hostname.
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
 

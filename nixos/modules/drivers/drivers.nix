@@ -3,6 +3,7 @@
 {
   imports =
     [
-      ./nvidia.nix # NVIDIA support.  
+      # ./nvidia.nix # NVIDIA support.  
+      ./amd.nix
     ];
 }

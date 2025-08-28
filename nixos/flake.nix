@@ -12,13 +12,16 @@
       inputs.nixpkgs.follows = "nixpkgs";
       inputs.hyprlang.follows = "hyprland/hyprlang";
     };
+
+    zen-browser.url = "github:0xc000022070/zen-browser-flake";
+
   };
 
   outputs = { self, nixpkgs, home-manager, ... }@inputs: {
     nixosConfigurations = {
       nixos = nixpkgs.lib.nixosSystem {
         system = "x86_64-linux";
-        specialArgs = { inherit inputs; };
+        specialArgs = { inherit inputs; system = "x86_64-linux"; };
          modules = [
            ./configuration.nix
             home-manager.nixosModules.home-manager
@@ -27,6 +30,7 @@
               home-manager.useUserPackages = true;
               home-manager.backupFileExtension = "bak"; # Set backup file extension
               home-manager.users.mitch = import ./home/home.nix;
+              home-manager.extraSpecialArgs = { inherit inputs; system = "x86_64-linux";};
             }
          ];
       };

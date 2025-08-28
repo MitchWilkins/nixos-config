@@ -23,7 +23,7 @@ in {
         };
 
         window = {
-          opacity = 0.65;
+          opacity = 0.50;
           blur = true;
           padding = {
             x = 5;

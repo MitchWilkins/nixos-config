@@ -24,7 +24,11 @@
 
   # XDG Portal
   xdg.portal.enable = true;
-  xdg.portal.extraPortals = [ pkgs.xdg-desktop-portal-gtk ];
+  xdg.portal.extraPortals = [ 
+    pkgs.xdg-desktop-portal-gtk 
+    pkgs.xdg-desktop-portal-wlr 
+  ];
+  xdg.portal.config.common.default = "wlr";
 
   # services.displayManager.sddm.wayland.enable = true;
   # services.displayManager.sddm.enable = true;

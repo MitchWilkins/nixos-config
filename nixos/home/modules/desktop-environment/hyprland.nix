@@ -32,6 +32,7 @@ in {
       hyprpaper
       hyprshot
       imv
+      nemo
       yazi
     ];
 
@@ -41,8 +42,8 @@ in {
       settings = {
         preload = [ wp ];
         wallpaper = [
-          "DP-2,${wp}"
-          "DP-3,${wp}"
+          "DP-5,${wp}"
+          "DP-4,${wp}"
         ];
       };
     };

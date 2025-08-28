@@ -1,6 +1,6 @@
 { pkgs }: with pkgs; [
   corectrl
-  lact
+  # lact
   linux-firmware
   mesa 
   radeontop

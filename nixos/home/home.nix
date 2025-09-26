@@ -23,7 +23,9 @@
   programs.htop.enable = true;
 
   home.packages = with pkgs; [
+    darktable
     qalculate-gtk
+    rawtherapee
 
     inputs.zen-browser.packages."${system}".default
   ];

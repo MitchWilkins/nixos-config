@@ -16,11 +16,11 @@
 
   environment.sessionVariables.LIBVA_DRIVER_NAME = "radeonsi";
 
-  security.polkit.extraConfig = ''
-    polkit.addRule(function(action, subject) {
-      if (action.id.indexOf("org.corectrl.helper") = 0 && subject.isInGroup("wheel")) {
-        return polkit.Result.YES;
-      }
-    });
-  '';
+  # security.polkit.extraConfig = ''
+  #   polkit.addRule(function(action, subject) {
+  #     if (action.id.indexOf("org.corectrl.helper") = 0 && subject.isInGroup("wheel")) {
+  #       return polkit.Result.YES;
+  #     }
+  #   });
+  # '';
 }

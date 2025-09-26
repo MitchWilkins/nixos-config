@@ -14,6 +14,28 @@
   # NVIDIA workaround
   boot.kernelParams = [ "nvidia-drm.modeset=1" ];
 
+  # ZFS
+  boot.supportedFilesystems = [ "zfs" ];
+  boot.zfs.forceImportRoot  = false;
+  boot.zfs.extraPools = [ "photos" ];
+  networking.hostId         = "450d961a";
+  services.zfs.autoScrub.enable = true;
+  
+  # Samba
+  services.samba = {
+    enable = true;
+    openFirewall = true;  # Opens ports 137-139 and 445
+    shares = {
+      photos = {
+        path = "/photos";
+        browseable = true;
+        writable = true;
+        "create mask" = "0664";
+        "directory mask" = "2775";
+      };
+    };
+  };
+
   # Cancel suspend
   # systemd.sleep.extraConfig = ''
   #   HandleSuspendKey=ignore
